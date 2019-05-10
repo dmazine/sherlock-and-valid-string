@@ -1,5 +1,5 @@
 {
-  "name": "sherlock-ans-valid-string",
+  "name": "sherlock-and-valid-string",
   "version": "1.0.0",
   "description": "HackerRank Sherlock and the Valid String challenge solution",
   "main": "index.js",
