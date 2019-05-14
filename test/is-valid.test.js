@@ -30,3 +30,27 @@ test('test case #5', () => {
     expect(isValid(s)).toBe('YES');
 });
 
+test('test case #6', () => {
+    const s = 'aabbcd';
+
+    expect(isValid(s)).toBe('NO');
+});
+
+test('test case #7', () => {
+    const s = 'aabbccddeefghi';
+
+    expect(isValid(s)).toBe('NO');
+});
+
+test('test case #8', () => {
+    const s = 'abcdefghhgfedecba';
+
+    expect(isValid(s)).toBe('YES');
+});
+
+test('test case #9', () => {
+    const s = 'aabbc';
+
+    expect(isValid(s)).toBe('YES');
+});
+

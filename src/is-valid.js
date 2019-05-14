@@ -1,23 +1,29 @@
 'use strict'
 
 function isValid(s) {
-    const arr = new Array(26).fill(0);
+    const charsFrequency = new Array(26).fill(0);
 
     for (let index = 0; index < s.length; index++) {
-        arr[s.charCodeAt(index) - 97]++;
+        charsFrequency[s.charCodeAt(index) - 97]++;
     }
 
-    let count = 0;
-    let sum = 0;
+    const frequencies = [];
 
-    for (let index = 0; index < arr.length; index++) {
-        if (arr[index]) {
-            count++;
-            sum += arr[index];
+    for (let frequency of charsFrequency) {
+        if (frequency > 0) {
+            frequencies.push(frequency);
         }
     }
-    
-    return (sum % count <= 1) ? 'YES' : 'NO';
+
+    frequencies.sort();
+
+    if ((frequencies[0] == frequencies[frequencies.length - 1])
+        || ((frequencies[0] == 1) && (frequencies[1] == frequencies[frequencies.length - 1]))
+        || ((frequencies[0] == frequencies[frequencies.length - 2]) && (frequencies[frequencies.length - 1] - frequencies[frequencies.length - 2] == 1))) {
+        return 'YES';
+    }
+
+    return 'NO';
 }
 
 module.exports = isValid;
